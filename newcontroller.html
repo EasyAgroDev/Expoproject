@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Gallery - Embedded Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white overflow-hidden">
+
+   <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full bg-gradient-to-r from-gray-800 via-gray-900 to-black shadow-lg p-5 navbar-hidden z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold text-white">Easy Agrotech</h1>
+      <div class="flex items-center space-x-8 relative">
+        <a href="index.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">Home</a>
+        <a href="about.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">About</a>
+        <a href="product.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">Products</a>
+
+        <div class="relative group">
+          <button class="text-xl font-bold text-white hover:text-indigo-400 transition flex items-center">Our Controller ▼</button>
+          <div class="absolute right-0 hidden group-hover:block bg-gray-800 mt-2 rounded shadow-lg min-w-[200px]">
+            <a href="oldcontroller.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">Controller (VEE-1314)</a>
+            <a href="newcontroller.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">Controller (EV-16)</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="text-xl font-bold text-white hover:text-indigo-400 transition flex items-center">Quotation ▼</button>
+          <div class="absolute right-0 hidden group-hover:block bg-gray-800 mt-2 rounded shadow-lg min-w-[200px]">
+            <a href="10000.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">10000 Birds (270*30')</a>
+            <a href="12000.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">12000 Birds (330*30')</a>
+            <a href="15000.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">15000 Birds (330*35')</a>
+            <a href="15001.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">15000 Birds (260*40')</a>
+            <a href="20000.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">20000 Birds (340*45')</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Main Container -->
+    <div class="bg-white w-full h-screen flex justify-center items-center pt-20">
+        <div id="container"
+            class="w-[1000px] h-[600px] relative bg-white border-8 border-gray-500 shadow-2xl rounded-lg">
+
+            <!-- Fixed Info Icon -->
+            <div class="absolute top-5 right-5 z-50">
+                <button onclick="toggleInfo()" class="text-white text-2xl">ℹ️</button>
+                <div id="info"
+                    class="mt-2 p-4 bg-white text-black text-lg rounded hidden w-90 h-78 overflow-y-auto whitespace-pre-wrap">
+                    Info will appear here.
+                </div>
+            </div>
+
+
+            <!-- Image Div 1 -->
+            <div id="div1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/HomePage.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[405px] left-[820px] w-[140px] h-[50px] bg-transparent cursor-pointer"></button><!--menu (div2)-->
+                <button onclick="showDiv('div7')"
+                    class="absolute bottom-[185px] left-[465px] w-[160px] h-[74px] bg-transparent text-white cursor-pointer"></button><!--fogger (div2)-->
+                <button onclick="showDiv('div3')"
+                    class="absolute bottom-[125px] left-[870px] w-[100px] h-[44px] bg-transparent text-white cursor-pointer"></button><!--Alarm (div2)-->
+                <button onclick="showDiv('div6')"
+                    class="absolute bottom-[125px] left-[570px] w-[100px] h-[44px] bg-transparent border-white text-white cursor-pointer"></button><!--Feed (div2)-->
+                <button onclick="showDiv('div13')"
+                    class="absolute bottom-[125px] left-[775px] w-[100px] h-[44px] bg-transparent border-white text-white cursor-pointer"></button><!--Light (div2)-->
+                <button onclick="showDiv('div5')"class="absolute bottom-[15px] left-[10px] w-[960px] h-[95px] bg-transparent text-white cursor-pointer"></button> <!--fan-->
+                <button onclick="showDiv('div5_1')"class="absolute bottom-[430px] left-[10px] w-[260px] h-[35px] bg-transparent text-white cursor-pointer"></button> <!--fan-->
+                <button onclick="showDiv('div18')"class="absolute bottom-[115px] left-[20px] w-[250px] h-[180px] bg-transparent cursor-pointer"></button><!--flock-->
+                <button onclick="showDiv('div9')" class="absolute bottom-[185px] left-[805px] w-[160px] h-[75px] bg-transparent text-white cursor-pointer"></button><!--Tunnel (div2)-->
+                <button onclick="showDiv('div4')" class="absolute bottom-[125px] left-[680px] w-[90px] h-[44px] bg-transparent  text-white cursor-pointer"></button><!--Heater (div2)-->
+                <button onclick="showDiv('div8')" class="absolute bottom-[185px] left-[300px] w-[160px] h-[74px] bg-transparent  text-white cursor-pointer"></button><!--CoolingPad (div2)-->
+                <button onclick="showDiv('div8')" class="absolute bottom-[390px] left-[20px] w-[260px] h-[35px] bg-transparent  text-white cursor-pointer"></button><!--CoolingPad (div2)-->
+                <button onclick="showDiv('div10')"class="absolute bottom-[185px] left-[640px] w-[160px] h-[74px] bg-transparent  text-white cursor-pointer"></button><!--Crossvent (div2)-->
+                <button onclick="showDiv('div10_1')"class="absolute bottom-[310px] left-[20px] w-[250px] h-[70px] bg-transparent text-white cursor-pointer"></button><!--Crossvent (div2)-->
+                <button onclick="showDiv('div3_1')"class="absolute bottom-[270px] left-[745px] w-[45px] h-[40px] bg-transparent  text-white cursor-pointer"></button><!--AlarmEvent-->
+            </div>
+
+            <!-- Image Div 2 = MENU -->
+            <div id="div2"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Menu.png');">
+
+
+                <button onclick="showDiv('div11')"class="absolute bottom-[425px] left-[80px] w-[150px] h-[120px] bg-transparent text-white cursor-pointer"></button><!--Today Planner-->
+
+                <button onclick="showDiv('div5')"class="absolute bottom-[415px] left-[300px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!--Fan-->
+
+                <button onclick="showDiv('div8')"class="absolute bottom-[425px] left-[520px] w-[150px] h-[120px] bg-transparent text-white cursor-pointer"></button><!--Coolpad-->
+                
+                <button onclick="showDiv('div7')"class="absolute bottom-[410px] left-[750px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!--Fooger-->
+
+                <button onclick="showDiv('div4')"class="absolute bottom-[250px] left-[80px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!--Heater-->
+
+                <button onclick="showDiv('div3')"class="absolute bottom-[250px] left-[300px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button> <!--Alarm-->
+
+                <button onclick="showDiv('div13')"class="absolute bottom-[255px] left-[530px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!--Light-->
+
+                <button onclick="showDiv('div6')"class="absolute bottom-[250px] left-[765px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!--Feed-->
+
+                <button onclick="showDiv('div10')"class="absolute bottom-[100px] left-[70px] w-[150px] h-[130px] bg-trasparent text-white cursor-pointer"></button><!--Crossvent-->
+                
+                <button onclick="showDiv('div9')"class="absolute bottom-[105px] left-[300px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!--Tunnel-->
+
+                <button onclick="showDiv('div17')"class="absolute bottom-[95px] left-[540px] w-[150px] h-[130px] bg-transparent text-white cursor-pointer"></button><!-- Report-->
+
+                <button onclick="showDiv('div19')"class="absolute bottom-[105px] left-[750px] w-[150px] h-[120px] bg-transparent text-white cursor-pointer"></button><!--System Setting-->
+
+
+
+
+                
+                <button onclick="showDiv('div12')"class="absolute bottom-[275px] left-[690px] w-[0px] h-[120px] bg- text-white cursor-pointer"></button><!--Testpage-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[90px] right-[10px] w-[110px] h-[120px] bg- text-white cursor-pointer"></button><!--Min Max Report-->
+                <button onclick="showDiv('div15')" class="absolute bottom-[95px] left-[330px] w-[0px] h-[120px] bg-green-800 text-white cursor-pointer"></button><!--Advance Setting-->
+                <button onclick="showDiv('div14')" class="absolute bottom-[95px] left-[150px] w-[0px] h-[120px] bg-yellow-800 text-white cursor-pointer"></button><!--Calibration-->
+                <button onclick="showDiv('div16')"class="absolute bottom-[95px] left-[505px] w-[0px] h-[120px] bg- text-white cursor-pointer"></button><!--DateSet-->
+
+
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+
+            </div>
+
+            <!-- Image Div 3=ALARM -->
+            <div id="div3"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Alarm.png');">
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+
+            </div>
+            <!-- Image Div 3=ALARM -->
+            <div id="div3_1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/AlarmEvent1.png');">
+                
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+
+            </div>
+
+            <!-- Image Div 4=Heater -->
+            <div id="div4"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Heater.png');">
+                
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 5=Fan -->
+            <div id="div5"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/FAN.png');">
+                
+                <button onclick="showDiv('div5_1')"class="absolute bottom-[300px] left-[70px] w-[350px] h-[145px] bg-transparent text-white cursor-pointer"></button>
+                <button onclick="showDiv('div5_2')"class="absolute bottom-[300px] left-[570px] w-[350px] h-[145px] bg-transparent text-white cursor-pointer"></button>
+
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 5=Fan -->
+            <div id="div5_1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/FANSETTING.png');">
+               
+                <button onclick="showDiv('div5')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div5')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 5=Fan -->
+            <div id="div5_2"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/MINIMUMVENTILATION.png');">
+               
+                <button onclick="showDiv('div5')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div5')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 6=Feed -->
+            <div id="div6"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Feeding.png');">
+                 <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 7=Fogger -->
+            <div id="div7"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Fogger.png');">
+                
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 8=Coolpad -->
+            <div id="div8"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/CoolingPad.png');">
+               
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 9=Tunnel -->
+            <div id="div9"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Tunnelinlet.png');">
+                 <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+
+            <!-- Image Div 10=Crossvent -->
+            <div id="div10"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/CrossVent.png');">
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 10_1Crossvent(Set CO2 & NH3) -->
+            <div id="div10_1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/CrossVent.png');">
+                  <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 11= Today Planner -->
+            <div id="div11"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/TodayPlanner.png');">
+                <button onclick="showDiv('div11_1')"class="absolute bottom-[300px] left-[70px] w-[350px] h-[145px] bg-transparent text-white cursor-pointer"></button>
+                <button onclick="showDiv('div11_2')"class="absolute bottom-[300px] left-[570px] w-[350px] h-[145px] bg-transparent text-white cursor-pointer"></button>
+
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+                
+            </div>
+            <!-- Image Div 11_1= Today Requirement -->
+            <div id="div11_1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/TodayRequirement.png');">
+                <button onclick="showDiv('div11')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div11')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+     
+            </div>
+            <!-- Image Div 11= Today Target -->
+            <div id="div11_2"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/TodayTargets.png');">
+
+                 <button onclick="showDiv('div11')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div11')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+               
+            </div>
+
+            <!-- Image Div 12=TestPage -->
+            <div id="div12"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/old/test.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[60px] right-[30px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+            <!-- Image Div 13=LightPage -->
+            <div id="div13"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Light.png');">
+                 <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 14=Calibration -->
+            <div id="div14"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/old/calibration.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[50px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+            <!-- Image Div 15=Adv Setting -->
+            <div id="div15"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/old/advancesetting.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[50px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+            <!-- Image Div 16=Date Set -->
+            <div id="div16"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/old/dateset.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[80px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+            <!-- Image Div 17=Report -->
+            <div id="div17"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Report.png');">
+
+                 <button onclick="showDiv('div17_1')"class="absolute bottom-[300px] left-[70px] w-[350px] h-[145px] bg-transparent text-white cursor-pointer"></button>
+                <button onclick="showDiv('div17_2')"class="absolute bottom-[300px] left-[570px] w-[350px] h-[145px] bg-transparent text-white cursor-pointer"></button>
+
+                 <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 17= Daily Report -->
+            <div id="div17_1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/DailyReportFDE1.png');">
+
+                <button onclick="showDiv('div17_1_1')"class="absolute top-[35px] left-[60px] w-[170px] h-[40px] bg-red-800 text-white cursor-pointer"></button> <!--Back-->
+
+                <button onclick="showDiv('div17')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div17')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+            <!-- Image Div 17=Min & Max Report -->
+            <div id="div17_2"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Min&MaxReport.png');">
+                 <button onclick="showDiv('div17')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div17')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+
+
+            <!-- Image Div 18=Flock -->
+            <div id="div18"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/FlockDataEntry.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+            <!-- Image Div 19=System Setting -->
+            <div id="div19"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/SystemSetting.png');">
+
+
+                <button onclick="showDiv('div19_1')"class="absolute top-[115px] left-[50px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Date & Time-->
+                <button onclick="showDiv('div19_2')"class="absolute top-[115px] left-[275px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Calibration-->
+                <button onclick="showDiv('div19_3')"class="absolute top-[115px] left-[500px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Test Page-->
+                <button onclick="showDiv('div19_4')"class="absolute top-[115px] left-[720px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Output Setting-->
+                <button onclick="showDiv('div19_5')"class="absolute top-[245px] left-[50px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Level Setting-->
+                <button onclick="showDiv('div19_6')"class="absolute top-[245px] left-[275px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--System-->
+                <button onclick="showDiv('div19_7')"class="absolute top-[245px] left-[500px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Password-->
+                <button onclick="showDiv('div19_8')"class="absolute top-[245px] left-[720px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Factory Reset-->
+                <button onclick="showDiv('div19_9')"class="absolute top-[375px] left-[50px] w-[200px] h-[110px] bg-transparent text-white cursor-pointer"></button> <!--Factory Reset-->
+
+
+                 <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[360px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button> <!--Back-->
+                <button onclick="showDiv('div1')"class="absolute bottom-[15px] left-[460px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Home-->
+                <button onclick="showDiv('div2')"class="absolute bottom-[15px] left-[555px] w-[70px] h-[40px] bg-transparent text-white cursor-pointer"></button>  <!--Back-->
+            </div>
+
+
+             <!-- Image Div 18=Flock -->
+            <div id="div19_1"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/DateSet.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+
+
+              <!-- Image Div 19_2=Calibration -->
+            <div id="div19_2"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Calibration.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_3=Test Page -->
+            <div id="div19_3"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/TestPage.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_4=Output Setting -->
+            <div id="div19_3"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/OutputSettings.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_5=Level Setting -->
+            <div id="div19_5"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/LevelSetting.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_6=System -->
+            <div id="div19_6"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/System.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_7=Password -->
+            <div id="div19_7"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Password.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_8=Factory Reset -->
+            <div id="div19_8"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/Reset.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+              <!-- Image Div 19_9=Factory Reset -->
+            <div id="div19_9"
+                class="absolute inset-0 bg-cover bg-center text-white flex items-center justify-center transition-all duration-500"
+                style="display: none; background-image: url('./public/Controller/new/UserSetting.png');">
+                <button onclick="showDiv('div2')"
+                    class="absolute bottom-[20px] right-[10px] w-[110px] h-[110px] bg-transparent text-white cursor-pointer"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            const infoDiv = document.getElementById('info');
+            infoDiv.classList.toggle('hidden');
+        }
+
+        function showDiv(divId) {
+            ['div1', 'div2', 'div3','div3_1', 'div4', 'div5','div5_1','div5_2', 'div6', 'div7', 'div8', 'div9', 'div10','div10_1', 'div11','div11_1','div11_2' ,'div12', 'div13', 'div14', 'div15', 'div16', 'div17','div17_1','div17_2', 'div18','div19','div19_1','div19_2','div19_3','div19_4','div19_5','div19_6','div19_7','div19_8','div19_9'].forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            document.getElementById(divId).style.display = 'flex';
+        }
+
+        // Initial state
+        showDiv('div1');
+
+        const infoData = {
+            div1: 'HOME PAGE:The header part of the home page displays the outputs from all sensors including Temperature 1-5, Humidity sensor, Gas1 (CO2), Gas2 (NH3), DOC, and the average temperature.The left side of the screen displays the status of the birds, along with the required temperature and humidity.The main screen contains the weather status of your city, along with the date, quick action buttons, and a menu button.The footer section displays the status of the fans and their trigger temperature.',
+            div2: 'MENU PAGE: Navigate between features like Alarm, Heater, Fan, etc.',
+            div3: 'ALARM PAGE: Configure and monitor alarm settings.',
+            div3_1: 'ALARM PAGE: Configure and monitor alarm settings.',
+            div4: 'HEATER: Temperature controls for your system.',
+            div5: 'FAN PAGE: Fan speed and operation management.',
+            div6: 'FEED PAGE: Control automatic feeding system.',
+            div7: 'FOGGER PAGE: Humidity and fogging control.',
+            div8: 'COOLPAD PAGE: Cooling pad management and temperature control.',
+            div9: 'TUNNEL PAGE: Tunnel ventilation system settings.',
+            div10: 'CROSSVENT PAGE: Cross ventilation system settings.',
+            div11: 'SELECT SENSOR PAGE: Sensor selection and configuration.',
+            div12: 'TEST PAGE INFO: System diagnostic tools and tests.',
+            div13: 'LIGHT PAGE: Lighting schedule and intensity controls.',
+            div14: 'CALIBRATION PAGE: Calibration procedures for devices.',
+            div15: 'ADVANCE SETTING PAGE: Advanced system settings.',
+            div16: 'DATESET PAGE: Set system date and time.',
+            div17: 'MIN & MAX REPORT PAGE: Reports of minimum and maximum values.',
+            div18: 'FLOCK PAGE: Manage and monitor flock-related data.'
+        };
+
+        function toggleInfo() {
+            const infoDiv = document.getElementById('info');
+            const currentVisibleDiv = Array.from(document.querySelectorAll('[id^=div]'))
+                .find(div => div.style.display === 'flex');
+
+            const infoKey = currentVisibleDiv ? currentVisibleDiv.id : 'div1';
+            infoDiv.innerText = infoData[infoKey] || 'No info available.';
+            infoDiv.classList.toggle('hidden');
+        }
+
+        function showDiv(divId) {
+            document.getElementById('info').classList.add('hidden'); // Hide info when switching div
+            ['div1', 'div2', 'div3','div3_1', 'div4', 'div5','div5_1','div5_2', 'div6', 'div7', 'div8', 'div9', 'div10', 'div11','div11_1','div11_2', 'div12', 'div13', 'div14', 'div15', 'div16', 'div17','div17_1','div17_2', 'div18','div19'].forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            document.getElementById(divId).style.display = 'flex';
+        }
+    </script>
+
+
+
+    <!-- <script>
+        // Auto redirect to home after 30s of inactivity
+        let inactivityTimer;
+
+        function startInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(() => {
+                window.location.href = "/";
+            }, 30000); // 30s
+        }
+
+        // Reset only when user interacts
+        ["click", "mousemove", "touchstart", "keydown", "scroll"].forEach(evt => {
+            window.addEventListener(evt, startInactivityTimer, false);
+        });
+
+        startInactivityTimer();
+    </script> -->
+
+</body>
+
+</html>
